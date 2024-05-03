@@ -72,7 +72,7 @@ keys = {
   { key = '5', mods = 'CTRL', action = act.ActivateTab(4) },
   { key = 'N', mods = 'CTRL', action = act.SpawnTab 'CurrentPaneDomain' },
   { key = "-", mods = "ALT", action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-	{ key = "+", mods = "ALT", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+	{ key = "=", mods = "ALT", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
   { key = 'P', mods = 'CTRL', action = act.ActivateCommandPalette },
   { key = 'R', mods = 'CTRL', action = act.ReloadConfiguration },
   { key = 'R', mods = 'SHIFT|CTRL', action = act.ReloadConfiguration },

@@ -5,7 +5,7 @@ if (Test-Path $FileName) {
    Write-Host "Deleting file" -ForegroundColor Red
    Remove-Item $FileName -verbose
 }
-Copy-Item -Path $env:LOCALAPPDATA\nvim\lua\user -Destination astrovimconfig -Recurse
+Copy-Item -Path $env:LOCALAPPDATA\nvim\lua -Destination astrovimconfig -Recurse
 Write-Host "Done Copying Astrovim config" -ForegroundColor Green
 
 Write-Host "Copying Wezterm config" -ForegroundColor Green
