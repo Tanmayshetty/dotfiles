@@ -29,16 +29,32 @@ return {
           ["<leader>ba"] = { ":%bd|e#|bd#<CR>", desc = "Close All Buffers" },
           ["<leader>fs"] = { "<cmd>Telescope resume<CR>", desc = "Redo Search" },
           ["<leader>mp"] = { ":Glow<CR>", desc = "Markdown preview" },
+          ["<leader>mo"] = { ":ObsidianNew<CR>", desc = "New Obsidian note" },
+          ["<leader>mf"] = { ":ObsidianQuickSwitch<CR>", desc = "Find Obsidian note" },
+          ["<leader>ms"] = { ":ObsidianSearch<CR>", desc = "Search Obsidian note" },
+          ["<leader>mi"] = { ":ObsidianPasteImg<CR>", desc = "Add Image to Obsidian note" },
+          ["<leader>mv"] = { ":ObsidianFollowLink vsplit<CR>", desc = "Vertical split obsidian note" },
+          ["<leader>mr"] = { ":ObsidianRename<CR>", desc = "Rename obsidian note" },
+          ["<leader>bM"] = { ":%s/\r$//g<CR>", desc = "Remove carriage returns" },
 
+          ["<Leader>HA"] = { ":HurlRunner<CR>", desc = "Run All requests" },
+          ["<Leader>Ha"] = { ":HurlRunnerAt<CR>", desc = "Run API requests" },
+          ["<Leader>re"] = { ":%s/\r$//g<CR>", desc = "Remove Line Endings" },
           -- tables with the `name` key will be registered with which-key if it's installed
           -- this is useful for naming menus
           ["<Leader>b"] = { name = "Buffers" },
+          ["<Leader>m"] = { name = "Markdown" },
+          ["<Leader>H"] = { name = "Hurl API" },
           -- quick save
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         },
         t = {
           -- setting a mapping to false will disable it
           -- ["<esc>"] = false,
+        },
+        v = {
+          ["<Leader>m"] = { name = "Markdown" },
+          ["<leader>me"] = { ":ObsidianExtractNote<CR>", desc = "Extract to new Obsidian note" },
         },
       },
     },
