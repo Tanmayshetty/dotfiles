@@ -56,7 +56,10 @@ return {
       require "neotest-jest" {
         jestCommand = "pnpm test --",
         env = { CI = true },
-        cwd = function(path) return vim.fn.getcwd() end,
+        cwd = function(file)
+          if string.find(file, "/packages/") then return string.match(file, "(.-/[^/]+/)src") end
+          return vim.fn.getcwd()
+        end,
       },
     }
     vim.diagnostic.config({

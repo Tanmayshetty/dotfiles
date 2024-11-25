@@ -1,4 +1,5 @@
 vim.cmd "set conceallevel=2"
+vim.cmd "AvanteSwitchProvider gemini"
 vim.filetype.add {
   extension = {
     conf = "conf",
