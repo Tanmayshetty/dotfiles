@@ -31,5 +31,6 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.programming-language-support.csv-vim" },
+  { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
   -- import/override with your plugins folder
 }

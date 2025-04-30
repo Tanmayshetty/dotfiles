@@ -100,6 +100,12 @@ return {
     },
   },
   {
+    "danielvolchek/tailiscope.nvim",
+    event = "VeryLazy",
+    config = function() require("telescope").load_extension "tailiscope" end,
+    opts = {},
+  },
+  {
     "Fildo7525/pretty_hover",
     opts = {},
   },
@@ -142,4 +148,21 @@ return {
       },
     },
   },
+  {
+    "olimorris/codecompanion.nvim",
+    event = "VeryLazy",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      strategies = {
+        -- Change the default chat adapter
+        chat = {
+          adapter = "gemini",
+        },
+      },
+    },
+  },
+  { "akinsho/git-conflict.nvim", tag = "*", config = function() require("git-conflict").setup() end },
 }

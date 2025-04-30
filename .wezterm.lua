@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
+local config = wezterm.config_builder()
 local mux = wezterm.mux
 local act = wezterm.action
-local config = {}
 local keys = {}
 local mouse_bindings = {}
 local launch_menu = {}
@@ -48,7 +48,6 @@ else
 		args = { "/usr/local/bin/pwsh", "-NoLogo", "-NoProfile" },
 	})
 end
-
 --- Disable defaul keys and set some minimum ones for now.
 --- This helps with conflicting keys in pwsh
 keys = {
@@ -110,7 +109,7 @@ keys = {
 	{ key = "w", mods = "SHIFT|CTRL", action = act.CloseCurrentTab({ confirm = true }) },
 	{ key = "w", mods = "SUPER", action = act.CloseCurrentTab({ confirm = true }) },
 	{
-		key = "R",
+		key = "E",
 		mods = "ALT",
 		action = act.PromptInputLine({
 			description = "Enter new name for tab",

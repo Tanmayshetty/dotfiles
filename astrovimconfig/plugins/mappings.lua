@@ -26,8 +26,26 @@ return {
             end,
             desc = "Pick to close",
           },
+          ["<Leader>tr"] = {
+            function()
+              require("astrocore").toggle_term_cmd {
+                cmd = "posting.exe",
+                direction = "tab",
+              }
+            end,
+            desc = "Posting Rest Client",
+          },
           ["<leader>ba"] = { ":%bd|e#|bd#<CR>", desc = "Close All Buffers" },
           ["<leader>fs"] = { "<cmd>Telescope resume<CR>", desc = "Redo Search" },
+          -- ["<Leader>ff"] = {
+          --   function() require("telescope.builtin").find_files(require("telescope.themes").get_dropdown {}) end,
+          --   desc = "Find files",
+          -- },
+          -- ["<Leader>fw"] = {
+          --   function() require("telescope.builtin").live_grep(require("telescope.themes").get_dropdown {}) end,
+          --   desc = "Find words",
+          -- },
+          ["]n"] = { ":call search('\\d\\+')<CR>", desc = "Next number" },
           ["<leader>mp"] = { ":Glow<CR>", desc = "Markdown preview" },
           ["<leader>mo"] = { ":ObsidianNew<CR>", desc = "New Obsidian note" },
           ["<leader>mf"] = { ":ObsidianQuickSwitch<CR>", desc = "Find Obsidian note" },
@@ -40,8 +58,20 @@ return {
           ["<Leader>HA"] = { ":HurlRunner<CR>", desc = "Run All requests" },
           ["<Leader>Ha"] = { ":HurlRunnerAt<CR>", desc = "Run API requests" },
           ["<Leader>re"] = { ":%s/\r$//g<CR>", desc = "Remove Line Endings" },
+          ["<Leader>rp"] = {
+            function()
+              require("astrocore").toggle_term_cmd {
+                cmd = string.format("python %s", vim.api.nvim_buf_get_name(0)),
+              }
+            end,
+            desc = "Execute Python file",
+          },
+
+          ["<Leader>lt"] = { ":Telescope tailiscope categories<CR>", desc = "Tailwind Search categories" },
+          ["<Leader>;c"] = { ":CodeCompanionChat Toggle<CR>", desc = "Code Componanion Chat Toggle" },
           -- tables with the `name` key will be registered with which-key if it's installed
           -- this is useful for naming menus
+          ["<Leader>r"] = { name = "Run Scripts" },
           ["<Leader>b"] = { name = "Buffers" },
           ["<Leader>m"] = { name = "Markdown" },
           ["<Leader>H"] = { name = "Hurl API" },
